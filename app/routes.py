@@ -7,7 +7,9 @@ from urllib.parse import urlsplit
 @app.route('/index')
 @login_required
 def index():
+    '''
     user = {'username': 'Miguel'}
+    '''
     posts = [
         {
             'author': {'username': 'John'},
@@ -26,6 +28,7 @@ def index():
             'body': 'Why am I so grumpy all the time?'
         }
     ]
+
     return render_template('index.html', title='Home', user=user, posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
